@@ -1,28 +1,38 @@
 //64010300
+//เปลี่ยนโจทย์เป็น
+//จงเขียนโปรแกรมเพื่อรับข้อมูลชนิดตัวเลข แล้วตรวจสอบว่าตัวเลขที่ผู้ใช้ใส่เข้ามานั้นเป็นจำนวนเฉพาะหรือไม่ เมื่อแสดงผลลัพธ์แล้วให้กลับไปรอรับข้อมูลใหม่วนอย่างนี้ไปเรื่อยๆ จนกระทั่งผู้ใช้ใส่ค่า -99 จึงจบการทำงาน (Level 2)
 #include<stdio.h>
-#include <math.h>
-float Area(float a,float b,float c)
-{	
-	float s,A;
-	s=(a+b+c)/2;
-	return sqrt(s*(s-a)*(s-b)*(s-c));
-}
 int main()
 {
-	float a,b,c;
-	printf("First side : ");
-	scanf("%f",&a);
-	printf("Second side : ");
-	scanf("%f",&b);
-	printf("Third side : ");
-	scanf("%f",&c);
-	if(a>0&&b>0&&c>0)
+	int n,i=2,k;
+	printf("Input Number : ");
+	scanf("%d",&n);
+	while(n!=-99)
 	{
-		printf("%.2f",Area(a,b,c));		
-	}
-	else
-	{
-		printf("Error");
+		i=2;
+		while(i<=n&&n%i!=0)
+		{
+			i=i+1;
+		}
+		if(n==i)
+		{
+			k=1;
+		}
+		else
+		{
+			k=0;
+		}
+
+		if(k==1)
+		{
+			printf("Prime Number\n\n");
+		}
+		else
+		{
+			printf("Not Prime Number\n\n");	
+		}	
+		printf("Input New Number : ");
+		scanf("%d",&n);
 	}
 	return 0;
 }
